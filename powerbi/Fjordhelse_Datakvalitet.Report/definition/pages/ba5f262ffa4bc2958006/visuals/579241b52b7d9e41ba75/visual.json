@@ -6,7 +6,7 @@
     "y": 0,
     "z": 0,
     "height": 67.400379506641372,
-    "width": 1251.46110056926,
+    "width": 1898.1404174573056,
     "tabOrder": 0
   },
   "visual": {
@@ -26,7 +26,8 @@
                       "color": "#ffffff"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }
