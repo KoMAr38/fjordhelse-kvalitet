@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f8781a6c142dc5a246b5",
+  "position": {
+    "x": 692,
+    "y": 104,
+    "z": 3,
+    "height": 322,
+    "width": 486,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_datakvalitet"
+                    }
+                  },
+                  "Property": "dimensjon"
+                }
+              },
+              "queryRef": "fact_datakvalitet.dimensjon",
+              "nativeQueryRef": "dimensjon",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6de9a8a42a0b9f5d4af1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_datakvalitet"
+              }
+            },
+            "Property": "dimensjon"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

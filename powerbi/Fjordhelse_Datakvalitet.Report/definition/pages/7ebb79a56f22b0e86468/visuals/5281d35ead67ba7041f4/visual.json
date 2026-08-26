@@ -1,0 +1,203 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "5281d35ead67ba7041f4",
+  "position": {
+    "x": 9.1081593927893731,
+    "y": 435.37001897533207,
+    "z": 2,
+    "height": 630.28462998102464,
+    "width": 1898.1404174573056,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_periode"
+                    }
+                  },
+                  "Property": "maned_etikett"
+                }
+              },
+              "queryRef": "dim_periode.maned_etikett",
+              "nativeQueryRef": "maned_etikett",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_enhet"
+                    }
+                  },
+                  "Property": "kortnavn"
+                }
+              },
+              "queryRef": "dim_enhet.kortnavn",
+              "nativeQueryRef": "kortnavn"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel manglende sluttdato"
+                }
+              },
+              "queryRef": "_Mål.Andel manglende sluttdato",
+              "nativeQueryRef": "Andel manglende sluttdato"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Manglende sluttregistrering over tid'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Kun henvisninger mottatt til og med juni 2025. Senere måneder er ikke ferdige på uttrekksdatoen.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "771b482c06aa6113a501",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_periode"
+              }
+            },
+            "Property": "maned_etikett"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "304953c9346088a75b47",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel manglende sluttdato"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "73e73715e8cf74f3dbbf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_enhet"
+              }
+            },
+            "Property": "kortnavn"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2df1d3a1328948678407",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_periode"
+              }
+            },
+            "Property": "maned"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dim_periode",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 4,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "maned"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2025-01-06T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

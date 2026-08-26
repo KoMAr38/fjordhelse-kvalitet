@@ -1,0 +1,199 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "874483f3050777bb2663",
+  "position": {
+    "x": 9.1081593927893731,
+    "y": 67.400379506641372,
+    "z": 1,
+    "height": 380.72106261859585,
+    "width": 1910.8918406072107,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Datagrunnlaget",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Dataene er syntetiske. Det finnes ingen pasienter bak radene. De genereres av src/generer_data.py med fast seed, og feilene er lagt inn med vilje og i kjent omfang. Fasiten ligger i data/raw/fasit.json med sha256 av datafila.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Analysen gjenskaper feilratene fra dataene alene, uten å lese fasiten. Det er kontrollen på at metoden virker.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Definisjon av kvalitetssikret fristbrudd",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Duplikater fjernes. En henvisning uten registrert sluttdato regnes ikke som fristbrudd dersom det finnes et registreringstidspunkt før fristen.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Definisjonen er konservativ. Den krever bevis for kontakt før fristen, ikke fravær av bevis for det motsatte. Den fanger derfor ikke forløp der all registrering uteble.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Forbehold",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Dette er et porteføljeprosjekt, ikke en produksjonsløsning og ikke en analyse av et virkelig foretak. Tallene er konstruert for å vise en mekanisme, ikke for å beskrive en tilstand.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Med ekte data ville registrert_tidspunkt alene ikke vært godt nok bevis. I et fagsystem finnes flere spor etter kontakt — kontaktregistreringer, notater, prosedyrekoder — og de bør brukes sammen.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Månedene etter juni 2025 er utelatt fra tidsserien. Forløp mottatt sent er ikke ferdige på uttrekksdatoen 15.01.2026, og manglende sluttdato der er reell, ikke en registreringsfeil.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

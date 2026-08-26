@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "6d203ace151636b654b6",
+  "name": "af6b441e1b5bcc4901bf",
   "position": {
-    "x": 440.83491461100567,
-    "y": 1003.719165085389,
-    "z": 6,
-    "height": 76.508538899430746,
-    "width": 1020.1138519924099,
-    "tabOrder": 6
+    "x": 9.1081593927893731,
+    "y": 0,
+    "z": 0,
+    "height": 103.83301707779886,
+    "width": 1169.4876660341556,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -19,6 +19,17 @@
               {
                 "textRuns": [
                   {
+                    "value": "Seks feiltyper i registreringen",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
                     "value": ""
                   }
                 ]
@@ -26,29 +37,15 @@
               {
                 "textRuns": [
                   {
-                    "value": "Forskjellen mellom de to søylene er registreringspraksis, ikke ventetid. Etter kvalitetssikring ligger alle enheter mellom 14,2 og 14,5 prosent.",
+                    "value": "Andel avvik per enhet og kvalitetsdimensjon.",
                     "textStyle": {
-                      "fontSize": "12pt"
+                      "fontSize": "12pt",
+                      "color": "#8a93a5"
                     }
                   }
                 ]
               }
             ]
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
           }
         }
       ]

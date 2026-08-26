@@ -37,6 +37,10 @@ table _Mål
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: e1361684-5f2f-4279-aa40-43d54efa751b
 
+	measure 'Andel avvik' = DIVIDE ( SUM ( fact_datakvalitet[antall_avvik] ), SUM ( fact_datakvalitet[antall_rader] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: dea3203c-4b90-491e-a57f-39c40c3e21f1
+
 	column Column1
 		dataType: string
 		isHidden

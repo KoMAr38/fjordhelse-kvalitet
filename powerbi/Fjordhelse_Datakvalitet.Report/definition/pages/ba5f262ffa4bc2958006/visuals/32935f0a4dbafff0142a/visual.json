@@ -1,0 +1,132 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "32935f0a4dbafff0142a",
+  "position": {
+    "x": 9.1081593927893731,
+    "y": 457.22960151802658,
+    "z": 2,
+    "height": 382.54269449715372,
+    "width": 388.00759013282732,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_enhet"
+                    }
+                  },
+                  "Property": "kortnavn"
+                }
+              },
+              "queryRef": "dim_enhet.kortnavn",
+              "nativeQueryRef": "kortnavn",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Antall henvisninger"
+                }
+              },
+              "queryRef": "_Mål.Antall henvisninger",
+              "nativeQueryRef": "Antall henvisninger"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Antall i nevner"
+                }
+              },
+              "queryRef": "_Mål.Antall i nevner",
+              "nativeQueryRef": "Antall i nevner"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Antall rader bak hver prosent'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f98e1e162c7d413728fc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_enhet"
+              }
+            },
+            "Property": "kortnavn"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "037edbbc832a182f1f9f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Antall henvisninger"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aeadb30c728c3764ff20",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Antall i nevner"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
