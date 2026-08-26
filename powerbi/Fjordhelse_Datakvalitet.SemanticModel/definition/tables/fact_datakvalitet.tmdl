@@ -16,11 +16,6 @@ table fact_datakvalitet
 		summarizeBy: none
 		sourceColumn: maned
 
-		variation Variation
-			isDefault
-			relationship: 1b7660ed-3ebd-43cc-9c02-58a2d8406eaa
-			defaultHierarchy: LocalDateTable_9cee0df8-9b9d-481f-bc1f-276a04962b4e.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

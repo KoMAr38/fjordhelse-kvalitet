@@ -8,11 +8,6 @@ table dim_periode
 		summarizeBy: none
 		sourceColumn: maned
 
-		variation Variation
-			isDefault
-			relationship: cfac54fd-1e8e-49a3-a074-5e4041baf328
-			defaultHierarchy: LocalDateTable_d3eb6088-0193-4355-ad28-7a16b47e997b.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -40,15 +35,21 @@ table dim_periode
 		lineageTag: d3a87fc0-e6e9-4ace-abba-fb1c578ac74a
 		summarizeBy: none
 		sourceColumn: maned_etikett
+		sortByColumn: sortering
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
 	column sortering
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 72a0e754-25a5-4cad-814a-e4d2da6a54f5
 		summarizeBy: sum
 		sourceColumn: sortering
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

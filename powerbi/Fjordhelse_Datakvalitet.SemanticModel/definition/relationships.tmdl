@@ -1,58 +1,16 @@
-relationship cfac54fd-1e8e-49a3-a074-5e4041baf328
-	joinOnDateBehavior: datePartOnly
-	fromColumn: dim_periode.maned
-	toColumn: LocalDateTable_d3eb6088-0193-4355-ad28-7a16b47e997b.Date
+relationship 3bcff77c-ebe6-09bb-8ed1-62e8434d2e17
+	fromColumn: fact_henvisning.enhet_kode
+	toColumn: dim_enhet.enhet_kode
 
-relationship c5a31351-c463-42f9-b74c-ba62a2cf2ddf
-	joinOnDateBehavior: datePartOnly
-	fromColumn: dim_diagnose.gyldig_fra
-	toColumn: LocalDateTable_a648eeac-bbc8-4fd2-ab85-4e634fcd1559.Date
-
-relationship a0842102-fa56-4ed3-b487-26c9642dd511
-	joinOnDateBehavior: datePartOnly
-	fromColumn: dim_diagnose.gyldig_til
-	toColumn: LocalDateTable_78aa669d-6132-43dc-9130-bbf14903439f.Date
-
-relationship 1b7660ed-3ebd-43cc-9c02-58a2d8406eaa
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_datakvalitet.maned
-	toColumn: LocalDateTable_9cee0df8-9b9d-481f-bc1f-276a04962b4e.Date
-
-relationship 0972b6d4-75bb-4a59-8470-43599dc0f366
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_henvisning.henvisning_mottatt
-	toColumn: LocalDateTable_0ca04119-389b-46b4-8213-6ae5cbdc2b3d.Date
-
-relationship 15b275f9-62a3-48d4-935f-6032507166c8
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_henvisning.vurdert_dato
-	toColumn: LocalDateTable_48a7d050-57a9-4529-9073-64e94d4bbc9e.Date
-
-relationship 48b06b03-5cd6-408e-9bee-9fe7c371bae5
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_henvisning.frist_dato
-	toColumn: LocalDateTable_a8cb7d25-40b2-4ec4-9fa5-e6470aee27ec.Date
-
-relationship f9fe665a-052e-4198-866a-d2ec2cbf5c5a
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_henvisning.ventetid_slutt
-	toColumn: LocalDateTable_7cd9e8e8-1336-40ff-a0cd-29db8d273b64.Date
-
-relationship 7b744c2c-4967-468f-9d58-e20bb2193506
-	joinOnDateBehavior: datePartOnly
+relationship b6effb5c-44ba-4faf-1919-b4cfcab1ec77
 	fromColumn: fact_henvisning.maned
-	toColumn: LocalDateTable_86702d0a-b0b5-4540-92b9-cf327b76b1c1.Date
+	toColumn: dim_periode.maned
 
-relationship 935c0cc9-e9d1-45eb-ae57-4d01d36e738f
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_henvisning.registrert_tidspunkt
-	toColumn: LocalDateTable_6ddce7ac-ee73-40c5-b1c7-83c798e28d7e.Date
-
-relationship AutoDetected_2ba82921-710a-448b-85d5-c2f8b3948412
+relationship 26c2b02e-60d2-1f7b-e8d9-b0fd7ea9b065
 	fromColumn: fact_datakvalitet.enhet_kode
 	toColumn: dim_enhet.enhet_kode
 
-relationship AutoDetected_3af290fa-0c22-479d-8eec-ff4a6113a33f
-	fromColumn: fact_henvisning.enhet_kode
-	toColumn: dim_enhet.enhet_kode
+relationship da0086d0-9a63-1e97-187a-a523a812c4f2
+	fromColumn: fact_datakvalitet.maned
+	toColumn: dim_periode.maned
 

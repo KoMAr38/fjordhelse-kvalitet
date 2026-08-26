@@ -11,9 +11,12 @@ table fact_henvisning
 
 	column pasient_pseudonym
 		dataType: string
+		isHidden
 		lineageTag: a49dafc6-abfd-4b61-9bb0-cf20d722e9b8
 		summarizeBy: none
 		sourceColumn: pasient_pseudonym
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -65,11 +68,6 @@ table fact_henvisning
 		summarizeBy: none
 		sourceColumn: henvisning_mottatt
 
-		variation Variation
-			isDefault
-			relationship: 0972b6d4-75bb-4a59-8470-43599dc0f366
-			defaultHierarchy: LocalDateTable_0ca04119-389b-46b4-8213-6ae5cbdc2b3d.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -80,11 +78,6 @@ table fact_henvisning
 		lineageTag: b1b65416-6166-428b-a3bb-210b699763d4
 		summarizeBy: none
 		sourceColumn: vurdert_dato
-
-		variation Variation
-			isDefault
-			relationship: 15b275f9-62a3-48d4-935f-6032507166c8
-			defaultHierarchy: LocalDateTable_48a7d050-57a9-4529-9073-64e94d4bbc9e.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -97,11 +90,6 @@ table fact_henvisning
 		summarizeBy: none
 		sourceColumn: frist_dato
 
-		variation Variation
-			isDefault
-			relationship: 48b06b03-5cd6-408e-9bee-9fe7c371bae5
-			defaultHierarchy: LocalDateTable_a8cb7d25-40b2-4ec4-9fa5-e6470aee27ec.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -113,28 +101,20 @@ table fact_henvisning
 		summarizeBy: none
 		sourceColumn: ventetid_slutt
 
-		variation Variation
-			isDefault
-			relationship: f9fe665a-052e-4198-866a-d2ec2cbf5c5a
-			defaultHierarchy: LocalDateTable_7cd9e8e8-1336-40ff-a0cd-29db8d273b64.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
 
 	column maned
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: a986dfbf-a021-4978-8f0d-4b56ff509f41
 		summarizeBy: none
 		sourceColumn: maned
 
-		variation Variation
-			isDefault
-			relationship: 7b744c2c-4967-468f-9d58-e20bb2193506
-			defaultHierarchy: LocalDateTable_86702d0a-b0b5-4540-92b9-cf327b76b1c1.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column prioritet
 		dataType: string
@@ -191,11 +171,6 @@ table fact_henvisning
 		summarizeBy: none
 		sourceColumn: registrert_tidspunkt
 
-		variation Variation
-			isDefault
-			relationship: 935c0cc9-e9d1-45eb-ae57-4d01d36e738f
-			defaultHierarchy: LocalDateTable_6ddce7ac-ee73-40c5-b1c7-83c798e28d7e.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column flagg_prioritet_default
@@ -225,6 +200,7 @@ table fact_henvisning
 
 		annotation SummarizationSetBy = Automatic
 
+	/// 1 når «ventetid slutt» ikke er registrert.
 	column flagg_manglende_slutt
 		dataType: int64
 		formatString: 0
@@ -252,6 +228,7 @@ table fact_henvisning
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Tom der sluttdato mangler. Tom er ikke null.
 	column ventetid_dager
 		dataType: int64
 		formatString: 0
@@ -261,6 +238,7 @@ table fact_henvisning
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Slik fagsystemet rapporterer. Henvisning uten registrert sluttdato regnes som ventende.
 	column fristbrudd_rapportert
 		dataType: int64
 		formatString: 0
@@ -270,6 +248,7 @@ table fact_henvisning
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Duplikater fjernet. Behandlede forløp uten sluttdato regnes ikke som fristbrudd.
 	column fristbrudd_kvalitetssikret
 		dataType: int64
 		formatString: 0
@@ -294,9 +273,10 @@ table fact_henvisning
 				let
 				    Kilde = Parquet.Document(
 				        File.Contents(MartMappe & "fact_henvisning.parquet")
-				    )
+				    ),
+				    #"Changed Type" = Table.TransformColumnTypes(Kilde,{{"maned", type date}})
 				in
-				    Kilde
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 

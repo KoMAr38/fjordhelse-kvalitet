@@ -9,17 +9,13 @@ table dim_diagnose
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Kodeverk revideres. Samme kode kan bety ulike ting i ulike perioder.
 	column gyldig_fra
 		dataType: dateTime
 		formatString: Long Date
 		lineageTag: dec079ac-22f3-46ad-9bb6-304f76a9a979
 		summarizeBy: none
 		sourceColumn: gyldig_fra
-
-		variation Variation
-			isDefault
-			relationship: c5a31351-c463-42f9-b74c-ba62a2cf2ddf
-			defaultHierarchy: LocalDateTable_a648eeac-bbc8-4fd2-ab85-4e634fcd1559.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -31,11 +27,6 @@ table dim_diagnose
 		lineageTag: 7b7c2af6-c1ff-4393-ad60-db6a9226b4c2
 		summarizeBy: none
 		sourceColumn: gyldig_til
-
-		variation Variation
-			isDefault
-			relationship: a0842102-fa56-4ed3-b487-26c9642dd511
-			defaultHierarchy: LocalDateTable_78aa669d-6132-43dc-9130-bbf14903439f.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
