@@ -1,0 +1,9 @@
+enhet_kode,enhet_navn,kortnavn,tjenesteomrade,er_psykisk_helse
+KIR,Kirurgisk avdeling,Kirurgi,Somatikk,false
+MED,Medisinsk avdeling,Medisin,Somatikk,false
+ORT,Ortopedisk avdeling,Ortopedi,Somatikk,false
+ONK,Onkologisk avdeling,Onkologi,Somatikk,false
+BUP,Barne- og ungdomspsykiatrisk poliklinikk,BUP,PHBU,true
+DPS,Distriktspsykiatrisk senter Fjordbyen,DPS,PHV,true
+TSB,Rus- og avhengighetspoliklinikk,TSB,TSB,true
+REH,Avdeling for rehabilitering og fysikalsk medisin,Rehabilitering,Somatikk,false

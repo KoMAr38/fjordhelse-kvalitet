@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raa
+    schema: raa
+    description: >
+      Syntetisk uttrekk fra det fiktive fagsystemet FJORD-EPJ.
+      Ingen reelle pasienter. Genereres av src/generer_data.py med fast seed.
+    meta:
+      syntetisk: true
+      generator: src/generer_data.py
+    tables:
+      - name: henvisninger
+        description: En rad per henvisning slik fagsystemet leverer den.

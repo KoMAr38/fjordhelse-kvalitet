@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Fjordhelse_Datakvalitet"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "42102e24-c636-4b52-9a57-117fd22ad2f5"
+  }
+}

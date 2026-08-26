@@ -1,0 +1,7 @@
+fjordhelse_kvalitet:
+  target: lokal
+  outputs:
+    lokal:
+      type: duckdb
+      path: "../data/fjordhelse.duckdb"
+      threads: 4

@@ -1,0 +1,88 @@
+{
+  "generert": "2026-08-26T17:50:59",
+  "seed": 20260907,
+  "antall_rader": 426484,
+  "antall_henvisninger_for_duplikater": 420000,
+  "periode": {
+    "fra": "2022-01-01",
+    "til": "2025-12-31"
+  },
+  "innebygde_feil": {
+    "obligatorisk_default": {
+      "planlagt_rate": 0.22,
+      "antall_rader": 120312
+    },
+    "kodeverk_skifte": {
+      "planlagt_rate": 0.04,
+      "antall_rader": 52556
+    },
+    "duplikat_overforing": {
+      "planlagt_rate": 0.015,
+      "antall_rader": 6484
+    },
+    "manglende_slutt": {
+      "planlagt_rate": 0.08,
+      "antall_rader": 47072
+    },
+    "arsskifte_klump": {
+      "planlagt_rate": 0.06,
+      "antall_rader": 24984
+    }
+  },
+  "enhet_omdopt": {
+    "enhet_kode": "REH",
+    "navn_for": "Avdeling for fysikalsk medisin",
+    "navn_etter": "Avdeling for rehabilitering og fysikalsk medisin",
+    "gyldig_fra": "2024-01-01"
+  },
+  "kodeverk_skifte": {
+    "kode": "R51",
+    "betydning_for": "Hodepine",
+    "betydning_etter": "Hodepine, uspesifisert",
+    "revisjonsdato": "2024-07-01"
+  },
+  "enhetsfaktor": {
+    "KIR": {
+      "manglende_slutt": 0.9,
+      "obligatorisk_default": 1.0,
+      "duplikat_overforing": 1.0
+    },
+    "MED": {
+      "manglende_slutt": 1.1,
+      "obligatorisk_default": 1.2,
+      "duplikat_overforing": 0.9
+    },
+    "ORT": {
+      "manglende_slutt": 1.0,
+      "obligatorisk_default": 0.8,
+      "duplikat_overforing": 3.2
+    },
+    "ONK": {
+      "manglende_slutt": 0.25,
+      "obligatorisk_default": 0.3,
+      "duplikat_overforing": 0.4
+    },
+    "BUP": {
+      "manglende_slutt": 2.6,
+      "obligatorisk_default": 1.9,
+      "duplikat_overforing": 0.7
+    },
+    "DPS": {
+      "manglende_slutt": 1.4,
+      "obligatorisk_default": 1.5,
+      "duplikat_overforing": 0.8
+    },
+    "TSB": {
+      "manglende_slutt": 2.9,
+      "obligatorisk_default": 2.1,
+      "duplikat_overforing": 1.1
+    },
+    "REH": {
+      "manglende_slutt": 1.8,
+      "obligatorisk_default": 1.6,
+      "duplikat_overforing": 1.4
+    }
+  },
+  "merknad": "Syntetiske data. Ingen reelle pasienter. Feilratene er grunnrater som skaleres per enhet med enhetsfaktor.",
+  "sha256": "6cb35a075e0eb3233bde95e3f140dce121aa5ab93c2b6ee7f9945fb8f33ae1a6"
+}

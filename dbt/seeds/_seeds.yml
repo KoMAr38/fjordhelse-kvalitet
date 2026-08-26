@@ -1,0 +1,26 @@
+version: 2
+
+seeds:
+  - name: enhet_oppslag
+    description: >
+      Kanonisk navn per enhetskode. Enheter skifter navn ved omorganisering,
+      koden gjør det ikke. Kobling skal alltid gå på kode.
+    columns:
+      - name: enhet_kode
+        description: Primærnøkkel. Uendret gjennom navneskifter.
+        tests: [unique, not_null]
+      - name: tjenesteomrade
+        tests:
+          - accepted_values:
+              values: ["Somatikk", "PHBU", "PHV", "TSB"]
+
+  - name: diagnose_kodeverk
+    description: >
+      Gyldighetsperiode per diagnosekode. R51 finnes to ganger fordi koden
+      skiftet betydning ved revisjonen 01.07.2024. En kode uten dato er
+      derfor ikke en entydig nøkkel.
+    columns:
+      - name: diagnose_kode
+        tests: [not_null]
+      - name: gyldig_fra
+        tests: [not_null]

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Fjordhelse_Datakvalitet"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3a0bc492-b29e-4c24-be6b-da3bc8d1b5a9"
+  }
+}

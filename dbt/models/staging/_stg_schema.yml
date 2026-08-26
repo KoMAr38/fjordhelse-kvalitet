@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_henvisning
+    description: >
+      Typet og ryddet henvisningsdata. Tom streng i ventetid_slutt er gjort
+      om til NULL, fordi «ikke registrert» og «tom» ikke er samme sak.
+    columns:
+      - name: henvisning_id
+        description: Unik per rad i kilden, også for duplikater ved overføring.
+        tests: [unique, not_null]
+      - name: enhet_kode
+        tests:
+          - not_null
+          - relationships:
+              to: ref('enhet_oppslag')
+              field: enhet_kode
+      - name: henvisning_mottatt
+        tests: [not_null]
+      - name: frist_dato
+        tests: [not_null]
+      - name: prioritet
+        description: >
+          Obligatorisk felt i fagsystemet. «Ikke vurdert» er systemets
+          forvalgte verdi og betyr at feltet er utfylt uten at et valg er tatt.
+        tests:
+          - accepted_values:
+              values: ["Rettighetspasient", "Uten rett til helsehjelp", "Ikke vurdert"]

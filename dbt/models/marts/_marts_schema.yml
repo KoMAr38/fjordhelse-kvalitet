@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: fact_henvisning
+    description: >
+      En rad per henvisning. Bærer både fristbrudd slik fagsystemet ville
+      rapportert det og fristbrudd etter kvalitetssikring. Forskjellen mellom
+      de to kolonnene er prosjektets hovedfunn.
+    columns:
+      - name: henvisning_id
+        tests: [unique, not_null]
+      - name: enhet_kode
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_enhet')
+              field: enhet_kode
+      - name: maned
+        tests: [not_null]
+      - name: fristbrudd_rapportert
+        description: Slik systemet rapporterer, uten kvalitetssikring.
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: fristbrudd_kvalitetssikret
+        description: Duplikater fjernet, behandlede forløp uten sluttdato tatt ut.
+        tests:
+          - accepted_values:
+              values: [0, 1]
+              quote: false
+      - name: ventetid_dager
+        description: NULL der ventetid slutt ikke er registrert. NULL er ikke null.
+
+  - name: dim_enhet
+    columns:
+      - name: enhet_kode
+        tests: [unique, not_null]
+
+  - name: dim_periode
+    columns:
+      - name: maned
+        tests: [unique, not_null]
+      - name: sortering
+        tests: [unique, not_null]
+
+  - name: dim_diagnose
+    description: >
+      Diagnosekode med gyldighetsperiode. Koden alene er ikke unik, fordi
+      R51 skiftet betydning 01.07.2024.
+    columns:
+      - name: diagnose_kode
+        tests: [not_null]
+
+  - name: fact_datakvalitet
+    description: Avvik per enhet, måned og kvalitetsdimensjon, langt format.
+    columns:
+      - name: dimensjon
+        tests:
+          - accepted_values:
+              values: ["Kompletthet", "Validitet", "Konsistens", "Unikhet",
+                       "Aktualitet", "Entydighet"]
+      - name: andel_avvik_pst
+        tests:
+          - ikke_negativ

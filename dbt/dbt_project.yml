@@ -1,0 +1,29 @@
+name: fjordhelse_kvalitet
+version: "1.0.0"
+config-version: 2
+profile: fjordhelse_kvalitet
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Skjæringsdato for «i dag». Fast, slik at tallene ikke endrer seg
+  # mellom to kjøringer og gjør en gammel analyse uetterprøvbar.
+  dagens_dato: "2026-01-15"
+
+models:
+  fjordhelse_kvalitet:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  fjordhelse_kvalitet:
+    +quote_columns: false
