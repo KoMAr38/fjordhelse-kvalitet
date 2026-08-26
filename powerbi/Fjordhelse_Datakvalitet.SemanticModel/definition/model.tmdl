@@ -11,5 +11,24 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["MartMappe","fnLesCsv","dim_enhet","dim_periode","dim_diagnose","fact_datakvalitet","fact_henvisning"]
+
+ref table dim_enhet
+ref table dim_periode
+ref table DateTableTemplate_60f02272-69cb-4a7e-a461-3445c2826851
+ref table LocalDateTable_d3eb6088-0193-4355-ad28-7a16b47e997b
+ref table dim_diagnose
+ref table LocalDateTable_a648eeac-bbc8-4fd2-ab85-4e634fcd1559
+ref table LocalDateTable_78aa669d-6132-43dc-9130-bbf14903439f
+ref table fact_datakvalitet
+ref table LocalDateTable_9cee0df8-9b9d-481f-bc1f-276a04962b4e
+ref table fact_henvisning
+ref table LocalDateTable_0ca04119-389b-46b4-8213-6ae5cbdc2b3d
+ref table LocalDateTable_48a7d050-57a9-4529-9073-64e94d4bbc9e
+ref table LocalDateTable_a8cb7d25-40b2-4ec4-9fa5-e6470aee27ec
+ref table LocalDateTable_7cd9e8e8-1336-40ff-a0cd-29db8d273b64
+ref table LocalDateTable_86702d0a-b0b5-4540-92b9-cf327b76b1c1
+ref table LocalDateTable_6ddce7ac-ee73-40c5-b1c7-83c798e28d7e
+
 ref cultureInfo en-US
 

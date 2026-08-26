@@ -1,0 +1,73 @@
+table dim_periode
+	lineageTag: bc1f8770-406e-436e-9d3c-e4dfd418c10a
+
+	column maned
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cc480fc0-cc2f-4441-b549-8a95f4a2b287
+		summarizeBy: none
+		sourceColumn: maned
+
+		variation Variation
+			isDefault
+			relationship: cfac54fd-1e8e-49a3-a074-5e4041baf328
+			defaultHierarchy: LocalDateTable_d3eb6088-0193-4355-ad28-7a16b47e997b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column aar
+		dataType: int64
+		formatString: 0
+		lineageTag: f93046c1-cdcb-4868-acea-32d9f80137ff
+		summarizeBy: sum
+		sourceColumn: aar
+
+		annotation SummarizationSetBy = Automatic
+
+	column maned_nr
+		dataType: int64
+		formatString: 0
+		lineageTag: 927577b1-9ba6-40cb-8f6f-6c49e9ec668a
+		summarizeBy: sum
+		sourceColumn: maned_nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column maned_etikett
+		dataType: string
+		lineageTag: d3a87fc0-e6e9-4ace-abba-fb1c578ac74a
+		summarizeBy: none
+		sourceColumn: maned_etikett
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortering
+		dataType: int64
+		formatString: 0
+		lineageTag: 72a0e754-25a5-4cad-814a-e4d2da6a54f5
+		summarizeBy: sum
+		sourceColumn: sortering
+
+		annotation SummarizationSetBy = Automatic
+
+	column tertial
+		dataType: int64
+		formatString: 0
+		lineageTag: e243762d-8f86-4e63-b4c3-1116c78398a5
+		summarizeBy: sum
+		sourceColumn: tertial
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_periode = m
+		mode: import
+		source =
+				let Kilde = fnLesCsv("dim_periode.csv"),
+				    #"Changed Type" = Table.TransformColumnTypes(Kilde,{{"aar", Int64.Type}, {"maned_nr", Int64.Type}, {"sortering", Int64.Type}, {"tertial", Int64.Type}, {"maned", type date}}) in #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

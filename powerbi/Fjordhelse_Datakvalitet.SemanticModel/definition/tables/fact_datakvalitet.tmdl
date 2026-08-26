@@ -1,0 +1,84 @@
+table fact_datakvalitet
+	lineageTag: 4a32b770-0543-4edd-a775-3211e5eae8cb
+
+	column enhet_kode
+		dataType: string
+		lineageTag: 1402e1f7-c04f-41d9-9ea3-d9a51a45b899
+		summarizeBy: none
+		sourceColumn: enhet_kode
+
+		annotation SummarizationSetBy = Automatic
+
+	column maned
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ea052f85-8aac-42b0-af7b-a3189114c748
+		summarizeBy: none
+		sourceColumn: maned
+
+		variation Variation
+			isDefault
+			relationship: 1b7660ed-3ebd-43cc-9c02-58a2d8406eaa
+			defaultHierarchy: LocalDateTable_9cee0df8-9b9d-481f-bc1f-276a04962b4e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column dimensjon
+		dataType: string
+		lineageTag: 18afa9a0-a51e-4072-a12f-3d049db3d9fe
+		summarizeBy: none
+		sourceColumn: dimensjon
+
+		annotation SummarizationSetBy = Automatic
+
+	column maling
+		dataType: string
+		lineageTag: 2daa00aa-02fd-4657-ac57-e14a381f8a82
+		summarizeBy: none
+		sourceColumn: maling
+
+		annotation SummarizationSetBy = Automatic
+
+	column antall_avvik
+		dataType: int64
+		formatString: 0
+		lineageTag: b0d75064-612d-4bed-838c-7fefe52822e2
+		summarizeBy: sum
+		sourceColumn: antall_avvik
+
+		annotation SummarizationSetBy = Automatic
+
+	column antall_rader
+		dataType: int64
+		formatString: 0
+		lineageTag: 87e603a3-4220-489b-88cc-5b81182bfb49
+		summarizeBy: sum
+		sourceColumn: antall_rader
+
+		annotation SummarizationSetBy = Automatic
+
+	column andel_avvik_pst
+		dataType: double
+		lineageTag: 877821b3-b4ed-4bfa-9ee2-f43e9ecbc9d4
+		summarizeBy: sum
+		sourceColumn: andel_avvik_pst
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_datakvalitet = m
+		mode: import
+		source =
+				let Kilde = fnLesCsv("fact_datakvalitet.csv"),
+				    #"Changed Type" = Table.TransformColumnTypes(Kilde,{{"maned", type datetime}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"maned", type date}, {"antall_avvik", Int64.Type}, {"antall_rader", Int64.Type}, {"andel_avvik_pst", type number}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

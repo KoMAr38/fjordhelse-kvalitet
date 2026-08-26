@@ -1,0 +1,26 @@
+expression MartMappe = "C:\prosjekt\fjordhelse-kvalitet\data\mart\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a3c68ee7-06cc-4bea-9c07-67832d2f64bd
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression fnLesCsv =
+		let
+		    fnLesCsv = (Filnavn as text) as table =>
+		        let
+		            Kilde = Csv.Document(
+		                File.Contents(MartMappe & Filnavn),
+		                [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+		            ),
+		            Overskrifter = Table.PromoteHeaders(Kilde, [PromoteAllScalars = true])
+		        in
+		            Overskrifter
+		in
+		    fnLesCsv
+	lineageTag: 64aaf2de-9d59-4c70-a844-357ac4006865
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+

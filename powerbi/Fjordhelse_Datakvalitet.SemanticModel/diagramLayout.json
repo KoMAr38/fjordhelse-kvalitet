@@ -7,7 +7,73 @@
         "x": 0,
         "y": 0
       },
-      "nodes": [],
+      "nodes": [
+        {
+          "location": {
+            "x": 852.3616394153596,
+            "y": 41.129941727546679
+          },
+          "nodeIndex": "dim_diagnose",
+          "nodeLineageTag": "036b2be2-7d77-4a86-8050-19d98ce5cb14",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.18475118062975,
+            "y": 18.934890822656584
+          },
+          "nodeIndex": "dim_enhet",
+          "nodeLineageTag": "51ace435-9014-4048-bc0e-95ec2f737af5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136.3616394153596,
+            "y": 41.129941727546679
+          },
+          "nodeIndex": "dim_periode",
+          "nodeLineageTag": "bc1f8770-406e-436e-9d3c-e4dfd418c10a",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.36163941535972,
+            "y": 8.2598834550933589
+          },
+          "nodeIndex": "fact_datakvalitet",
+          "nodeLineageTag": "4a32b770-0543-4edd-a775-3211e5eae8cb",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": -50.000000000000028
+          },
+          "nodeIndex": "fact_henvisning",
+          "nodeLineageTag": "dd0b10b7-8846-4dc8-8845-e87348b7f160",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
       "name": "All tables",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,

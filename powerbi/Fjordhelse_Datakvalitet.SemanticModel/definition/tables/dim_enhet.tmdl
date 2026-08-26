@@ -1,0 +1,56 @@
+table dim_enhet
+	lineageTag: 51ace435-9014-4048-bc0e-95ec2f737af5
+
+	column enhet_kode
+		dataType: string
+		lineageTag: e08da9e8-b509-491b-851c-099284e835f0
+		summarizeBy: none
+		sourceColumn: enhet_kode
+
+		annotation SummarizationSetBy = Automatic
+
+	column enhet_navn
+		dataType: string
+		lineageTag: 4b192d79-4778-4195-ad1e-9b25caec3820
+		summarizeBy: none
+		sourceColumn: enhet_navn
+
+		annotation SummarizationSetBy = Automatic
+
+	column kortnavn
+		dataType: string
+		lineageTag: 058a5298-57ac-4af4-97cc-96007f417b74
+		summarizeBy: none
+		sourceColumn: kortnavn
+
+		annotation SummarizationSetBy = Automatic
+
+	column tjenesteomrade
+		dataType: string
+		lineageTag: 7fdf009f-ddad-4c8d-b3be-d00d7ba677cc
+		summarizeBy: none
+		sourceColumn: tjenesteomrade
+
+		annotation SummarizationSetBy = Automatic
+
+	column er_psykisk_helse
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6c650a08-fa4e-417a-b352-d0e2bd1571c9
+		summarizeBy: none
+		sourceColumn: er_psykisk_helse
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_enhet = m
+		mode: import
+		source =
+				let Kilde = fnLesCsv("dim_enhet.csv"),
+				    #"Changed Type" = Table.TransformColumnTypes(Kilde,{{"er_psykisk_helse", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

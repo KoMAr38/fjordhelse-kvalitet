@@ -1,0 +1,304 @@
+table fact_henvisning
+	lineageTag: dd0b10b7-8846-4dc8-8845-e87348b7f160
+
+	column henvisning_id
+		dataType: string
+		lineageTag: 8a69fba4-d00d-479c-ba37-703f5bcd2552
+		summarizeBy: none
+		sourceColumn: henvisning_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pasient_pseudonym
+		dataType: string
+		lineageTag: a49dafc6-abfd-4b61-9bb0-cf20d722e9b8
+		summarizeBy: none
+		sourceColumn: pasient_pseudonym
+
+		annotation SummarizationSetBy = Automatic
+
+	column enhet_kode
+		dataType: string
+		lineageTag: 31555f9b-e0a2-4581-a55e-719e94c8a199
+		summarizeBy: none
+		sourceColumn: enhet_kode
+
+		annotation SummarizationSetBy = Automatic
+
+	column kortnavn
+		dataType: string
+		lineageTag: d7454936-5f3b-4a1f-8354-1538a08714d1
+		summarizeBy: none
+		sourceColumn: kortnavn
+
+		annotation SummarizationSetBy = Automatic
+
+	column enhet_navn_kanonisk
+		dataType: string
+		lineageTag: a7e25021-7545-4df0-8769-c89fce3d0fde
+		summarizeBy: none
+		sourceColumn: enhet_navn_kanonisk
+
+		annotation SummarizationSetBy = Automatic
+
+	column tjenesteomrade
+		dataType: string
+		lineageTag: 4de34ef2-3f4b-4825-844d-e3e6e77bb329
+		summarizeBy: none
+		sourceColumn: tjenesteomrade
+
+		annotation SummarizationSetBy = Automatic
+
+	column er_psykisk_helse
+		dataType: int64
+		formatString: 0
+		lineageTag: e16df669-7f2f-498a-a050-720602e6d8be
+		summarizeBy: sum
+		sourceColumn: er_psykisk_helse
+
+		annotation SummarizationSetBy = Automatic
+
+	column henvisning_mottatt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dc7fe9cb-6b15-4f1e-af94-84c7fc331741
+		summarizeBy: none
+		sourceColumn: henvisning_mottatt
+
+		variation Variation
+			isDefault
+			relationship: 0972b6d4-75bb-4a59-8470-43599dc0f366
+			defaultHierarchy: LocalDateTable_0ca04119-389b-46b4-8213-6ae5cbdc2b3d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column vurdert_dato
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b1b65416-6166-428b-a3bb-210b699763d4
+		summarizeBy: none
+		sourceColumn: vurdert_dato
+
+		variation Variation
+			isDefault
+			relationship: 15b275f9-62a3-48d4-935f-6032507166c8
+			defaultHierarchy: LocalDateTable_48a7d050-57a9-4529-9073-64e94d4bbc9e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column frist_dato
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e6c86cdc-d5cc-4b58-a28a-f8f3764ff25c
+		summarizeBy: none
+		sourceColumn: frist_dato
+
+		variation Variation
+			isDefault
+			relationship: 48b06b03-5cd6-408e-9bee-9fe7c371bae5
+			defaultHierarchy: LocalDateTable_a8cb7d25-40b2-4ec4-9fa5-e6470aee27ec.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ventetid_slutt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 23b5a1b6-b40c-45e5-8087-f1e5f1e8ed7d
+		summarizeBy: none
+		sourceColumn: ventetid_slutt
+
+		variation Variation
+			isDefault
+			relationship: f9fe665a-052e-4198-866a-d2ec2cbf5c5a
+			defaultHierarchy: LocalDateTable_7cd9e8e8-1336-40ff-a0cd-29db8d273b64.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column maned
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a986dfbf-a021-4978-8f0d-4b56ff509f41
+		summarizeBy: none
+		sourceColumn: maned
+
+		variation Variation
+			isDefault
+			relationship: 7b744c2c-4967-468f-9d58-e20bb2193506
+			defaultHierarchy: LocalDateTable_86702d0a-b0b5-4540-92b9-cf327b76b1c1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioritet
+		dataType: string
+		lineageTag: 34347f66-d934-4180-a4af-bad8ca3c0158
+		summarizeBy: none
+		sourceColumn: prioritet
+
+		annotation SummarizationSetBy = Automatic
+
+	column omsorgsniva
+		dataType: string
+		lineageTag: a3fbbdd4-d03f-4a09-b0ea-fb58de12601b
+		summarizeBy: none
+		sourceColumn: omsorgsniva
+
+		annotation SummarizationSetBy = Automatic
+
+	column diagnose_kode
+		dataType: string
+		lineageTag: 25956106-2b6c-4818-8bac-1b9d4f46570d
+		summarizeBy: none
+		sourceColumn: diagnose_kode
+
+		annotation SummarizationSetBy = Automatic
+
+	column diagnose_tekst_gjeldende
+		dataType: string
+		lineageTag: bd2212ec-c9e6-4d7b-ba55-98878fe2c114
+		summarizeBy: none
+		sourceColumn: diagnose_tekst_gjeldende
+
+		annotation SummarizationSetBy = Automatic
+
+	column kodeverk_versjon
+		dataType: string
+		lineageTag: 72bca3d6-997e-41d3-9404-1e36ab021925
+		summarizeBy: none
+		sourceColumn: kodeverk_versjon
+
+		annotation SummarizationSetBy = Automatic
+
+	column registrert_av
+		dataType: string
+		lineageTag: a9e746a3-7d9b-48ba-a8d9-aa7d0496e046
+		summarizeBy: none
+		sourceColumn: registrert_av
+
+		annotation SummarizationSetBy = Automatic
+
+	column registrert_tidspunkt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 32832498-0a72-4ba1-838d-cdc2099bdd76
+		summarizeBy: none
+		sourceColumn: registrert_tidspunkt
+
+		variation Variation
+			isDefault
+			relationship: 935c0cc9-e9d1-45eb-ae57-4d01d36e738f
+			defaultHierarchy: LocalDateTable_6ddce7ac-ee73-40c5-b1c7-83c798e28d7e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_prioritet_default
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f3dec19-648d-4c4b-8996-6a57f67442ef
+		summarizeBy: sum
+		sourceColumn: flagg_prioritet_default
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_enhetsnavn_avvik
+		dataType: int64
+		formatString: 0
+		lineageTag: d7301540-99f0-46a5-a4ad-2c986bd70da1
+		summarizeBy: sum
+		sourceColumn: flagg_enhetsnavn_avvik
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_duplikat
+		dataType: int64
+		formatString: 0
+		lineageTag: 24955ab1-5933-4b78-ac4d-29fa4d3b2209
+		summarizeBy: sum
+		sourceColumn: flagg_duplikat
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_manglende_slutt
+		dataType: int64
+		formatString: 0
+		lineageTag: cf9fb4bc-73a1-4653-945c-14e01ae2b610
+		summarizeBy: sum
+		sourceColumn: flagg_manglende_slutt
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_arsskifte
+		dataType: int64
+		formatString: 0
+		lineageTag: b6bcf20c-2c11-484b-8eab-65c82f7a9b0d
+		summarizeBy: sum
+		sourceColumn: flagg_arsskifte
+
+		annotation SummarizationSetBy = Automatic
+
+	column flagg_kode_tvetydig
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bf7ca3a-d908-48be-b63f-924f4cfeb131
+		summarizeBy: sum
+		sourceColumn: flagg_kode_tvetydig
+
+		annotation SummarizationSetBy = Automatic
+
+	column ventetid_dager
+		dataType: int64
+		formatString: 0
+		lineageTag: 630a88ac-1f29-4481-8a8e-d182c86a6384
+		summarizeBy: sum
+		sourceColumn: ventetid_dager
+
+		annotation SummarizationSetBy = Automatic
+
+	column fristbrudd_rapportert
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b2774ae-42de-4253-9cce-ef224f12aef7
+		summarizeBy: sum
+		sourceColumn: fristbrudd_rapportert
+
+		annotation SummarizationSetBy = Automatic
+
+	column fristbrudd_kvalitetssikret
+		dataType: int64
+		formatString: 0
+		lineageTag: fa9039bb-852b-4f6d-948a-efea38f5509a
+		summarizeBy: sum
+		sourceColumn: fristbrudd_kvalitetssikret
+
+		annotation SummarizationSetBy = Automatic
+
+	column teller_i_nevner
+		dataType: int64
+		formatString: 0
+		lineageTag: a1e9c10a-3403-4760-be98-aa30dabe49dd
+		summarizeBy: sum
+		sourceColumn: teller_i_nevner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_henvisning = m
+		mode: import
+		source =
+				let
+				    Kilde = Parquet.Document(
+				        File.Contents(MartMappe & "fact_henvisning.parquet")
+				    )
+				in
+				    Kilde
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

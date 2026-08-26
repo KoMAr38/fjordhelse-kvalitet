@@ -1,0 +1,77 @@
+table dim_diagnose
+	lineageTag: 036b2be2-7d77-4a86-8050-19d98ce5cb14
+
+	column diagnose_kode
+		dataType: string
+		lineageTag: 6a1bd5d4-e32f-4ee1-87a5-f35619ab4152
+		summarizeBy: none
+		sourceColumn: diagnose_kode
+
+		annotation SummarizationSetBy = Automatic
+
+	column gyldig_fra
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dec079ac-22f3-46ad-9bb6-304f76a9a979
+		summarizeBy: none
+		sourceColumn: gyldig_fra
+
+		variation Variation
+			isDefault
+			relationship: c5a31351-c463-42f9-b74c-ba62a2cf2ddf
+			defaultHierarchy: LocalDateTable_a648eeac-bbc8-4fd2-ab85-4e634fcd1559.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column gyldig_til
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7b7c2af6-c1ff-4393-ad60-db6a9226b4c2
+		summarizeBy: none
+		sourceColumn: gyldig_til
+
+		variation Variation
+			isDefault
+			relationship: a0842102-fa56-4ed3-b487-26c9642dd511
+			defaultHierarchy: LocalDateTable_78aa669d-6132-43dc-9130-bbf14903439f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column diagnose_tekst
+		dataType: string
+		lineageTag: 6dc1a3ca-8e8d-41bd-947b-bb66da88773d
+		summarizeBy: none
+		sourceColumn: diagnose_tekst
+
+		annotation SummarizationSetBy = Automatic
+
+	column kodeverk_versjon
+		dataType: string
+		lineageTag: e03825e9-06eb-456f-9482-490c04c4158a
+		summarizeBy: none
+		sourceColumn: kodeverk_versjon
+
+		annotation SummarizationSetBy = Automatic
+
+	column diagnose_visning
+		dataType: string
+		lineageTag: da900aae-6380-48fe-acbc-12b3c1115566
+		summarizeBy: none
+		sourceColumn: diagnose_visning
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_diagnose = m
+		mode: import
+		source =
+				let Kilde = fnLesCsv("dim_diagnose.csv"),
+				    #"Changed Type" = Table.TransformColumnTypes(Kilde,{{"gyldig_fra", type date}, {"gyldig_til", type date}}) in #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
