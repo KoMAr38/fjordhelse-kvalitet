@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9b198f8ad11e9be7fcd8",
+  "position": {
+    "x": 810.62618595825427,
+    "y": 132.97912713472485,
+    "z": 2,
+    "height": 130,
+    "width": 380,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd kvalitetssikret"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd kvalitetssikret",
+              "nativeQueryRef": "Andel fristbrudd kvalitetssikret"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mål"
+                  }
+                },
+                "Property": "Andel fristbrudd kvalitetssikret"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1907907fb64e2be5272c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd kvalitetssikret"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

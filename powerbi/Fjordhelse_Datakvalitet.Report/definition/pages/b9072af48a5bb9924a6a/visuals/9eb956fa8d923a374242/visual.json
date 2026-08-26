@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9eb956fa8d923a374242",
+  "position": {
+    "x": 40.075901328273247,
+    "y": 132.97912713472485,
+    "z": 1,
+    "height": 130,
+    "width": 380,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd rapportert"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd rapportert",
+              "nativeQueryRef": "Andel fristbrudd rapportert"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mål"
+                  }
+                },
+                "Property": "Andel fristbrudd rapportert"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b315e3b7d91d68b5995a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd rapportert"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

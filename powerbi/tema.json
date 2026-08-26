@@ -1,0 +1,238 @@
+{
+  "name": "Fjordhelse mork",
+  "dataColors": [
+    "#3B9EFF",
+    "#00D6A0",
+    "#FFB020",
+    "#A78BFA",
+    "#FF6B6B",
+    "#4ECDC4",
+    "#F472B6",
+    "#94A3B8"
+  ],
+  "background": "#161B26",
+  "foreground": "#E6EDF7",
+  "tableAccent": "#3B9EFF",
+  "good": "#00D6A0",
+  "neutral": "#8A93A5",
+  "bad": "#FF5A5A",
+  "maximum": "#FF5A5A",
+  "center": "#FFB020",
+  "minimum": "#161B26",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 32,
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#E6EDF7"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#E6EDF7"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#B7C0D0"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1D2433" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#2B3446" } },
+            "radius": 10
+          }
+        ],
+        "visualHeader": [{ "show": false }],
+        "dropShadow": [{ "show": false }],
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "background": { "solid": { "color": "#1D2433" } },
+            "fontSize": 13,
+            "fontFamily": "Segoe UI Semibold",
+            "alignment": "left"
+          }
+        ],
+        "categoryAxis": [
+          {
+            "show": true,
+            "labelColor": { "solid": { "color": "#B7C0D0" } },
+            "fontSize": 10,
+            "gridlineShow": false,
+            "titleFontColor": { "solid": { "color": "#8A93A5" } }
+          }
+        ],
+        "valueAxis": [
+          {
+            "show": true,
+            "labelColor": { "solid": { "color": "#B7C0D0" } },
+            "fontSize": 10,
+            "gridlineShow": true,
+            "gridlineColor": { "solid": { "color": "#2B3446" } },
+            "gridlineThickness": 1,
+            "titleFontColor": { "solid": { "color": "#8A93A5" } }
+          }
+        ],
+        "legend": [
+          {
+            "show": true,
+            "position": "TopCenter",
+            "labelColor": { "solid": { "color": "#B7C0D0" } },
+            "fontSize": 10,
+            "showTitle": false
+          }
+        ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#E6EDF7" } },
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#0F131C" } },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": { "solid": { "color": "#0F131C" } },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "fontSize": 34,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#8A93A5" } },
+            "fontSize": 11
+          }
+        ]
+      }
+    },
+    "textbox": {
+      "*": {
+        "background": [{ "show": false }],
+        "border": [{ "show": false }]
+      }
+    },
+    "slicer": {
+      "*": {
+        "items": [
+          {
+            "fontColor": { "solid": { "color": "#B7C0D0" } },
+            "background": { "solid": { "color": "#1D2433" } }
+          }
+        ],
+        "header": [
+          {
+            "fontColor": { "solid": { "color": "#E6EDF7" } },
+            "background": { "solid": { "color": "#1D2433" } }
+          }
+        ]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "grid": [
+          {
+            "gridVertical": true,
+            "gridVerticalColor": { "solid": { "color": "#2B3446" } },
+            "gridHorizontal": true,
+            "gridHorizontalColor": { "solid": { "color": "#2B3446" } },
+            "outlineColor": { "solid": { "color": "#2B3446" } }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "backColor": { "solid": { "color": "#232C3D" } },
+            "fontSize": 10
+          }
+        ],
+        "rowHeaders": [
+          {
+            "fontColor": { "solid": { "color": "#E6EDF7" } },
+            "backColor": { "solid": { "color": "#1D2433" } },
+            "fontSize": 10
+          }
+        ],
+        "values": [
+          {
+            "fontColorPrimary": { "solid": { "color": "#E6EDF7" } },
+            "backColorPrimary": { "solid": { "color": "#1D2433" } },
+            "fontColorSecondary": { "solid": { "color": "#E6EDF7" } },
+            "backColorSecondary": { "solid": { "color": "#1A2130" } },
+            "fontSize": 10
+          }
+        ],
+        "total": [
+          {
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "backColor": { "solid": { "color": "#232C3D" } }
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "grid": [
+          {
+            "gridVertical": true,
+            "gridVerticalColor": { "solid": { "color": "#2B3446" } },
+            "gridHorizontal": true,
+            "gridHorizontalColor": { "solid": { "color": "#2B3446" } },
+            "outlineColor": { "solid": { "color": "#2B3446" } }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontColor": { "solid": { "color": "#FFFFFF" } },
+            "backColor": { "solid": { "color": "#232C3D" } },
+            "fontSize": 10
+          }
+        ],
+        "values": [
+          {
+            "fontColorPrimary": { "solid": { "color": "#E6EDF7" } },
+            "backColorPrimary": { "solid": { "color": "#1D2433" } },
+            "fontColorSecondary": { "solid": { "color": "#E6EDF7" } },
+            "backColorSecondary": { "solid": { "color": "#1A2130" } },
+            "fontSize": 10
+          }
+        ]
+      }
+    }
+  }
+}

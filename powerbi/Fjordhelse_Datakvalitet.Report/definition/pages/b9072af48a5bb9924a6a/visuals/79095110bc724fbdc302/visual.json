@@ -1,0 +1,170 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "79095110bc724fbdc302",
+  "position": {
+    "x": 40.075901328273247,
+    "y": 289.63946869070207,
+    "z": 4,
+    "height": 714.079696394687,
+    "width": 1856.2428842504744,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_enhet"
+                    }
+                  },
+                  "Property": "kortnavn"
+                }
+              },
+              "queryRef": "dim_enhet.kortnavn",
+              "nativeQueryRef": "kortnavn",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd rapportert"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd rapportert",
+              "nativeQueryRef": "Andel fristbrudd rapportert"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd kvalitetssikret"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd kvalitetssikret",
+              "nativeQueryRef": "Andel fristbrudd kvalitetssikret"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mål"
+                  }
+                },
+                "Property": "Andel fristbrudd rapportert"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Andel fristbrudd per enhet'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c199ca1e45982c47b412",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_enhet"
+              }
+            },
+            "Property": "kortnavn"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "94d72f16ab210b215c28",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd rapportert"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6afe6594b3f22cb8ec30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd kvalitetssikret"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

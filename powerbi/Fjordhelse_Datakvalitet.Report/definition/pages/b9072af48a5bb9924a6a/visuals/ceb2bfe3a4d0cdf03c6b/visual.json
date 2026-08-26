@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "b527b5908aaab6503836",
+  "name": "ceb2bfe3a4d0cdf03c6b",
   "position": {
-    "x": 10,
-    "y": 0,
-    "z": 0,
-    "height": 280,
-    "width": 280,
-    "tabOrder": 0
+    "x": 1515.5977229601517,
+    "y": 132.97912713472485,
+    "z": 3,
+    "height": 130,
+    "width": 380,
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "_Mål"
                     }
                   },
-                  "Property": "Andel fristbrudd rapportert"
+                  "Property": "Differanse prosentpoeng"
                 }
               },
-              "queryRef": "_Mål.Andel fristbrudd rapportert",
-              "nativeQueryRef": "Andel fristbrudd rapportert"
+              "queryRef": "_Mål.Differanse prosentpoeng",
+              "nativeQueryRef": "Differanse prosentpoeng"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Mål"
                   }
                 },
-                "Property": "Andel fristbrudd rapportert"
+                "Property": "Differanse prosentpoeng"
               }
             },
             "direction": "Descending"
@@ -56,7 +56,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "702d97706cafd2f9a78f",
+        "name": "4f5713e9a51c394e7f27",
         "field": {
           "Measure": {
             "Expression": {
@@ -64,7 +64,7 @@
                 "Entity": "_Mål"
               }
             },
-            "Property": "Andel fristbrudd rapportert"
+            "Property": "Differanse prosentpoeng"
           }
         },
         "type": "Advanced"
