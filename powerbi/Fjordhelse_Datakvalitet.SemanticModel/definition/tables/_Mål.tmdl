@@ -1,0 +1,62 @@
+table _Mål
+	lineageTag: ab85fd39-526d-427e-b58e-6e0813f9a83e
+
+	measure 'Antall henvisninger' = COUNTROWS ( fact_henvisning )
+		formatString: 0
+		lineageTag: 6d7308c2-2867-4923-83dd-ced3c7cdf00c
+
+	measure 'Antall i nevner' = SUM ( fact_henvisning[teller_i_nevner] )
+		formatString: 0
+		lineageTag: 0da9b73c-3f02-4246-996c-5e9549e79aeb
+
+	measure 'Fristbrudd rapportert' = SUM ( fact_henvisning[fristbrudd_rapportert] )
+		formatString: 0
+		lineageTag: 756b1b45-d783-46b6-b507-6534ee4a1f2b
+
+	measure 'Fristbrudd kvalitetssikret' = SUM ( fact_henvisning[fristbrudd_kvalitetssikret] )
+		formatString: 0
+		lineageTag: 076f6f99-3470-4b47-91fb-438428c1021f
+
+	measure 'Andel fristbrudd rapportert' = DIVIDE ( [Fristbrudd rapportert], [Antall henvisninger] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6f2c622a-6be3-479a-9898-7bbf6b03dba7
+
+	measure 'Andel fristbrudd kvalitetssikret' = DIVIDE ( [Fristbrudd kvalitetssikret], [Antall i nevner] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6527c3c2-c0aa-40b5-8825-66d36259f875
+
+	measure 'Differanse prosentpoeng' = [Andel fristbrudd rapportert] - [Andel fristbrudd kvalitetssikret]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 45a29230-2f89-4e91-a39b-555842761472
+
+	measure 'Andel manglende sluttdato' = DIVIDE ( SUM ( fact_henvisning[flagg_manglende_slutt] ), [Antall henvisninger] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 41250eee-d7ee-45cb-bae0-cf79978d537d
+
+	measure 'Andel prioritet ikke vurdert' = DIVIDE ( SUM ( fact_henvisning[flagg_prioritet_default] ), [Antall henvisninger] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e1361684-5f2f-4279-aa40-43d54efa751b
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: bb46c1e2-7a5c-4bd8-b1bf-8ec8cb6cd7a4
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Mål = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				  Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

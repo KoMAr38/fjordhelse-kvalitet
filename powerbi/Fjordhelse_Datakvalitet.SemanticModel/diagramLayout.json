@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 3,
+        "x": 431.3616394153596,
         "y": 0
       },
       "nodes": [
@@ -72,6 +72,19 @@
             "width": 234
           },
           "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1420.3616394153596,
+            "y": 107
+          },
+          "nodeIndex": "_Mål",
+          "nodeLineageTag": "ab85fd39-526d-427e-b58e-6e0813f9a83e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 6
         }
       ],
       "name": "All tables",

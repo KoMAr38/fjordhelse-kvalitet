@@ -11,13 +11,14 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["MartMappe","fnLesCsv","dim_enhet","dim_periode","dim_diagnose","fact_datakvalitet","fact_henvisning"]
+annotation PBI_QueryOrder = ["MartMappe","fnLesCsv","dim_enhet","dim_periode","dim_diagnose","fact_datakvalitet","fact_henvisning","_Mål"]
 
 ref table dim_enhet
 ref table dim_periode
 ref table dim_diagnose
 ref table fact_datakvalitet
 ref table fact_henvisning
+ref table _Mål
 
 ref cultureInfo en-US
 
