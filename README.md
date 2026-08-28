@@ -1,6 +1,6 @@
 # Fjordhelse — datakvalitet i et fagsystem
 
-**Ni av ti fristbrudd finnes ikke.**
+**Fire av ti fristbrudd finnes ikke.**
 
 Rapportert andel fristbrudd i Fjordhelse HF er 24,1 %. Etter kvalitetssikring av registreringsdataene er den 14,4 %. Forskjellen — 9,7 prosentpoeng, 42 489 henvisninger — er registreringspraksis, ikke ventetid.
 
@@ -69,7 +69,7 @@ Det er kontrollen på at metoden virker — ikke at tallene er pene.
 | Onkologi | 16,5 % | 14,5 % | 2,0 pp |
 | **Totalt** | **24,1 %** | **14,4 %** | **9,7 pp** |
 
-Etter kvalitetssikring ligger samtlige enheter mellom 14,2 og 14,5 prosent. Spredningen på 16 prosentpoeng i det rapporterte tallet er i sin helhet registreringspraksis.
+Etter kvalitetssikring ligger samtlige enheter mellom 14,2 og 14,5 prosent. Spredningen mellom beste og dårligste enhet faller fra 16,1 til 0,3 prosentpoeng. Nesten hele forskjellen som styringstallet viste, var registreringspraksis.
 
 De psykiske helsevernenhetene (TSB, BUP, DPS) og rehabilitering har lengst forløp og flest kontaktpunkter per pasient, og dermed flest anledninger til at en sluttregistrering uteblir. Onkologi har korte, tett oppfulgte forløp og nesten ingen avvik.
 
@@ -154,7 +154,6 @@ Fire sider:
 | **Datakvalitet** | Matrise over seks feiltyper, tidsserie for manglende sluttregistrering |
 | **Metode og forbehold** | Definisjoner, datagrunnlag, begrensninger |
 
-![Metode og forbehold](docs/bilder/side3_metode.png)
 ![Datakvalitet](docs/bilder/side2_datakvalitet.png)
 
 Mørkt tema definert i `powerbi/tema.json`. Blå er alltid rapportert, grønn er alltid kvalitetssikret, rød er forbeholdt avvik. Fargene betyr det samme på alle fire sidene.
@@ -199,6 +198,8 @@ Med ekte data ville `registrert_tidspunkt` alene ikke vært godt nok bevis på p
 Sammenligningen mot samme måned i fjor er tatt med for å vise tidsintelligens i modellen. På et syntetisk datasett med fast seed er den bevegelsen støy, ikke et funn.
 
 Definisjonen av kvalitetssikret fristbrudd er ett av flere mulige valg. Den er dokumentert i rapportens metodeside slik at den kan bestrides.
+
+![Metode og forbehold](docs/bilder/side3_metode.png)
 
 ---
 
