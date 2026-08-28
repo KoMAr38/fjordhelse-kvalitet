@@ -154,6 +154,7 @@ Fire sider:
 | **Datakvalitet** | Matrise over seks feiltyper, tidsserie for manglende sluttregistrering |
 | **Metode og forbehold** | Definisjoner, datagrunnlag, begrensninger |
 
+![Metode og forbehold](docs/bilder/side3_metode.png)
 ![Datakvalitet](docs/bilder/side2_datakvalitet.png)
 
 Mørkt tema definert i `powerbi/tema.json`. Blå er alltid rapportert, grønn er alltid kvalitetssikret, rød er forbeholdt avvik. Fargene betyr det samme på alle fire sidene.
