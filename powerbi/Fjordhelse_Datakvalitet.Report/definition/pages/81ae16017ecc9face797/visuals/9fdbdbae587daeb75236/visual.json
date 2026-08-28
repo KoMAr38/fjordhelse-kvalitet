@@ -1,0 +1,362 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9fdbdbae587daeb75236",
+  "position": {
+    "x": 234.19354838709674,
+    "y": 580.64516129032256,
+    "z": 13,
+    "height": 375.48387096774189,
+    "width": 969.67741935483866,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_enhet"
+                    }
+                  },
+                  "Property": "kortnavn"
+                }
+              },
+              "queryRef": "dim_enhet.kortnavn",
+              "nativeQueryRef": "kortnavn"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd rapportert"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd rapportert",
+              "nativeQueryRef": "Andel fristbrudd rapportert"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Andel fristbrudd kvalitetssikret"
+                }
+              },
+              "queryRef": "_Mål.Andel fristbrudd kvalitetssikret",
+              "nativeQueryRef": "Andel fristbrudd kvalitetssikret"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Differanse prosentpoeng"
+                }
+              },
+              "queryRef": "_Mål.Differanse prosentpoeng",
+              "nativeQueryRef": "Differanse prosentpoeng"
+            },
+            {
+              "field": {
+                "SparklineData": {
+                  "Measure": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mål"
+                        }
+                      },
+                      "Property": "Andel fristbrudd rapportert"
+                    }
+                  },
+                  "Groupings": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_dato"
+                          }
+                        },
+                        "Property": "maned_start"
+                      }
+                    }
+                  ],
+                  "ApplyCalculationGroupTo": "Point"
+                }
+              },
+              "queryRef": "SparklineData(_Mål.Andel fristbrudd rapportert_[dim_dato.maned_start])",
+              "nativeQueryRef": "Utvikling rapportert",
+              "displayName": "Utvikling rapportert"
+            },
+            {
+              "field": {
+                "SparklineData": {
+                  "Measure": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mål"
+                        }
+                      },
+                      "Property": "Andel fristbrudd kvalitetssikret"
+                    }
+                  },
+                  "Groupings": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_dato"
+                          }
+                        },
+                        "Property": "maned_start"
+                      }
+                    }
+                  ],
+                  "ApplyCalculationGroupTo": "Point"
+                }
+              },
+              "queryRef": "SparklineData(_Mål.Andel fristbrudd kvalitetssikret_[dim_dato.maned_start])",
+              "nativeQueryRef": "Utvikling kvalitetssikret",
+              "displayName": "Utvikling kvalitetssikret"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mål"
+                  }
+                },
+                "Property": "Differanse prosentpoeng"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "sparklines": [
+        {
+          "properties": {
+            "dataColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00D6A0'"
+                    }
+                  }
+                }
+              }
+            },
+            "markers": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "markerColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "SparklineData(_Mål.Andel fristbrudd kvalitetssikret_[dim_dato.maned_start])"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "maxValue": {
+                "expr": {
+                  "Literal": {
+                    "Value": "0.25D"
+                  }
+                }
+              },
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#FF5A5A'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'minColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'foreground'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mål.Differanse prosentpoeng"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Utvikling per enhet'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Linjene viser månedlig utvikling 2022–2025. Søylen viser hvor mye kvalitetssikringen flytter tallet.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ad22755f3c2455f9699c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_enhet"
+              }
+            },
+            "Property": "kortnavn"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "589b4eb9bc3c94b2b348",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd rapportert"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b2ad2e43cd2c4f66e6b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Andel fristbrudd kvalitetssikret"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ac21dad0e9a234d22854",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Differanse prosentpoeng"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
