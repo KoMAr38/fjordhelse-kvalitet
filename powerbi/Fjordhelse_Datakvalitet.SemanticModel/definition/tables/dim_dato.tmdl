@@ -17,16 +17,17 @@ table dim_dato
 	column aar
 		formatString: 0
 		lineageTag: 29a09b52-4d60-45c6-b9f8-ed0d9f58f31e
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [aar]
 
 		annotation SummarizationSetBy = Automatic
 
 	column maned_nr
+		isHidden
 		formatString: 0
 		lineageTag: 743dff35-9112-4f71-971a-b0f44098d9ef
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [maned_nr]
 
@@ -48,13 +49,15 @@ table dim_dato
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [maned_etikett]
+		sortByColumn: sortering
 
 		annotation SummarizationSetBy = Automatic
 
 	column sortering
+		isHidden
 		formatString: 0
 		lineageTag: 45bba871-d733-4593-bcff-4d45afa570b9
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [sortering]
 

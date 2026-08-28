@@ -41,6 +41,30 @@ table _Mål
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: dea3203c-4b90-491e-a57f-39c40c3e21f1
 
+	measure 'Andel fristbrudd rapportert i fjor' = CALCULATE ( [Andel fristbrudd rapportert], SAMEPERIODLASTYEAR ( dim_dato[Date] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2927be35-9bff-4755-91ec-ed895a3910d2
+
+	measure 'Andel fristbrudd kvalitetssikret i fjor' = CALCULATE ( [Andel fristbrudd kvalitetssikret], SAMEPERIODLASTYEAR ( dim_dato[Date] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8b025971-6479-4fd3-bc0b-1c9895c987de
+
+	measure 'Endring rapportert pp' = [Andel fristbrudd rapportert] - [Andel fristbrudd rapportert i fjor]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9b91c21a-46b3-4068-846d-f7f1f22374ce
+
+	measure 'Endring kvalitetssikret pp' = [Andel fristbrudd kvalitetssikret] - [Andel fristbrudd kvalitetssikret i fjor]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b4e90245-7d3c-41d3-87a1-4df3d0bddaab
+
+	measure 'Ikke reelle fristbrudd' = [Fristbrudd rapportert] - [Fristbrudd kvalitetssikret]
+		formatString: 0
+		lineageTag: 06cb1e66-6ce3-46bc-a69d-6e23dcaa0921
+
+	measure 'Komplett sluttregistrering' = 1 - [Andel manglende sluttdato]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 53cbe3b2-f091-4dc9-bd8e-88c547d876a0
+
 	column Column1
 		dataType: string
 		isHidden

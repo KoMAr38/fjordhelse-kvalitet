@@ -14,3 +14,7 @@ relationship da0086d0-9a63-1e97-187a-a523a812c4f2
 	fromColumn: fact_datakvalitet.maned
 	toColumn: dim_periode.maned
 
+relationship c54cde54-73ee-0df5-9295-0be41c759667
+	fromColumn: fact_henvisning.henvisning_mottatt
+	toColumn: dim_dato.Date
+
