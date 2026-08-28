@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "6cb0a4a8a626494ebe48",
+  "position": {
+    "x": 9.6774193548387082,
+    "y": 303.87096774193543,
+    "z": 3,
+    "height": 150.96774193548384,
+    "width": 375.48387096774189,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mål"
+                    }
+                  },
+                  "Property": "Undertekst rapportert"
+                }
+              },
+              "queryRef": "_Mål.Undertekst rapportert",
+              "nativeQueryRef": "Undertekst rapportert"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33a42a29c56e652db73d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mål"
+              }
+            },
+            "Property": "Undertekst rapportert"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

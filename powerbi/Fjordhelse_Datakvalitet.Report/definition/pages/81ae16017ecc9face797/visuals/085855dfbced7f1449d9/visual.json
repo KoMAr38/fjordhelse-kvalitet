@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "085855dfbced7f1449d9",
+  "position": {
+    "x": 791.61290322580635,
+    "y": 303.87096774193543,
+    "z": 11,
+    "height": 58.064516129032249,
+    "width": 315.48387096774189,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Henvisninger",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#8a93a5"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

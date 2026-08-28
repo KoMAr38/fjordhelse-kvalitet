@@ -57,8 +57,7 @@ table _Mål
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b4e90245-7d3c-41d3-87a1-4df3d0bddaab
 
-	measure 'Ikke reelle fristbrudd' = [Fristbrudd rapportert] - [Fristbrudd kvalitetssikret]
-		formatString: 0
+	measure 'Ikke reelle fristbrudd' = FORMAT ( [Fristbrudd rapportert] - [Fristbrudd kvalitetssikret], "#,##0" )
 		lineageTag: 06cb1e66-6ce3-46bc-a69d-6e23dcaa0921
 
 	measure 'Komplett sluttregistrering' = 1 - [Andel manglende sluttdato]
@@ -71,11 +70,11 @@ table _Mål
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	measure 'Andel fristbrudd rapportert siste' = CALCULATE ( [Andel fristbrudd rapportert], DATESINPERIOD ( dim_dato[Date], [Siste modne maned], -1, MONTH ) )
+	measure 'Andel fristbrudd rapportert siste' = CALCULATE ( [Andel fristbrudd rapportert], dim_dato[maned_start] = DATE ( 2025, 6, 1 ) )
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 54982e33-ea9f-4204-b5c3-2447e3288b8e
 
-	measure 'Andel fristbrudd rapportert siste i fjor' = CALCULATE ( [Andel fristbrudd rapportert], DATESINPERIOD ( dim_dato[Date], EDATE ( [Siste modne maned], -12 ), -1, MONTH ) )
+	measure 'Andel fristbrudd rapportert siste i fjor' = CALCULATE ( [Andel fristbrudd rapportert], dim_dato[maned_start] = DATE ( 2024, 6, 1 ) )
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b9de8dbe-8f0b-43ed-b87f-b81a7e9dd089
 
@@ -83,7 +82,7 @@ table _Mål
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 87ca1cd4-7c89-45c2-a345-7fe0a4fca3ae
 
-	measure 'Andel fristbrudd kvalitetssikret siste' = CALCULATE ( [Andel fristbrudd kvalitetssikret], DATESINPERIOD ( dim_dato[Date], [Siste modne maned], -1, MONTH ) )
+	measure 'Andel fristbrudd kvalitetssikret siste' = CALCULATE ( [Andel fristbrudd kvalitetssikret], dim_dato[maned_start] = DATE ( 2025, 6, 1 ) )
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: f1894cde-cfca-465b-88b4-4523e24b8a80
 
@@ -127,10 +126,22 @@ table _Mål
 	measure 'Farge kvalitetssikret' = IF ( [Endring kvalitetssikret siste] > 0, "#FF5A5A", "#00D6A0" )
 		lineageTag: 28420c0c-8875-4432-8bb1-0eab6fe22bbf
 
-	measure 'Undertekst rapportert' = FORMAT ( [Endring rapportert siste], "+0,0 pp;-0,0 pp;0,0 pp" ) & " mot i fjor"
+	measure 'Undertekst rapportert' =
+			
+			VAR E = [Endring rapportert siste] * 100
+			VAR Tegn = IF ( E > 0, "+", "" )
+			VAR Tall = SUBSTITUTE ( FORMAT ( E, "0.0" ), ".", "," )
+			RETURN
+			Tegn & Tall & " pp mot i fjor"
 		lineageTag: 5f1efaef-7ed1-4dcb-952c-8be0c5cdb9cd
 
-	measure 'Undertekst kvalitetssikret' = FORMAT ( [Endring kvalitetssikret siste], "+0,0 pp;-0,0 pp;0,0 pp" ) & " mot i fjor"
+	measure 'Undertekst kvalitetssikret' =
+			
+			VAR E = [Endring kvalitetssikret siste] * 100
+			VAR Tegn = IF ( E > 0, "+", "" )
+			VAR Tall = SUBSTITUTE ( FORMAT ( E, "0.0" ), ".", "," )
+			RETURN
+			Tegn & Tall & " pp mot i fjor"
 		lineageTag: 0de96e9f-8739-4433-8f24-75683bdd0430
 
 	column Column1
