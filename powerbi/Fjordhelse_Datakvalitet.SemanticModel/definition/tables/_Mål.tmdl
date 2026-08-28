@@ -65,6 +65,74 @@ table _Mål
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 53cbe3b2-f091-4dc9-bd8e-88c547d876a0
 
+	measure 'Siste modne maned' = DATE ( 2025, 6, 30 )
+		formatString: yyyy-mm-dd
+		lineageTag: 2312c82e-68fd-4cca-948a-3a97b7977cf0
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Andel fristbrudd rapportert siste' = CALCULATE ( [Andel fristbrudd rapportert], DATESINPERIOD ( dim_dato[Date], [Siste modne maned], -1, MONTH ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 54982e33-ea9f-4204-b5c3-2447e3288b8e
+
+	measure 'Andel fristbrudd rapportert siste i fjor' = CALCULATE ( [Andel fristbrudd rapportert], DATESINPERIOD ( dim_dato[Date], EDATE ( [Siste modne maned], -12 ), -1, MONTH ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b9de8dbe-8f0b-43ed-b87f-b81a7e9dd089
+
+	measure 'Endring rapportert siste' = [Andel fristbrudd rapportert siste] - [Andel fristbrudd rapportert siste i fjor]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 87ca1cd4-7c89-45c2-a345-7fe0a4fca3ae
+
+	measure 'Andel fristbrudd kvalitetssikret siste' = CALCULATE ( [Andel fristbrudd kvalitetssikret], DATESINPERIOD ( dim_dato[Date], [Siste modne maned], -1, MONTH ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f1894cde-cfca-465b-88b4-4523e24b8a80
+
+	measure 'Andel fristbrudd kvalitetssikret siste i fjor' = CALCULATE ( [Andel fristbrudd kvalitetssikret], DATESINPERIOD ( dim_dato[Date], EDATE ( [Siste modne maned], -12 ), -1, MONTH ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 86f0574f-9e4b-44ad-8f02-665c92bab53d
+
+	measure 'Endring kvalitetssikret siste' = [Andel fristbrudd kvalitetssikret siste] - [Andel fristbrudd kvalitetssikret siste i fjor]
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0c8f5da3-51fd-4354-a7fb-f7978a434532
+
+	measure 'Pil rapportert' =
+			
+			VAR E = [Endring rapportert siste]
+			RETURN
+			SWITCH (
+			    TRUE (),
+			    ISBLANK ( E ), "",
+			    E > 0.001, UNICHAR ( 9650 ),
+			    E < -0.001, UNICHAR ( 9660 ),
+			    UNICHAR ( 9644 )
+			)
+		lineageTag: 4aede018-ed6a-4f52-aca5-946a3e110fe0
+
+	measure 'Pil kvalitetssikret' =
+			
+			VAR E = [Endring kvalitetssikret siste]
+			RETURN
+			SWITCH (
+			    TRUE (),
+			    ISBLANK ( E ), "",
+			    E > 0.001, UNICHAR ( 9650 ),
+			    E < -0.001, UNICHAR ( 9660 ),
+			    UNICHAR ( 9644 )
+			)
+		lineageTag: 8995c0ac-7111-4b32-8eec-f819cc4ba178
+
+	measure 'Farge rapportert' = IF ( [Endring rapportert siste] > 0, "#FF5A5A", "#00D6A0" )
+		lineageTag: 4ced6a25-6320-48aa-b9ba-72846fe29949
+
+	measure 'Farge kvalitetssikret' = IF ( [Endring kvalitetssikret siste] > 0, "#FF5A5A", "#00D6A0" )
+		lineageTag: 28420c0c-8875-4432-8bb1-0eab6fe22bbf
+
+	measure 'Undertekst rapportert' = FORMAT ( [Endring rapportert siste], "+0,0 pp;-0,0 pp;0,0 pp" ) & " mot i fjor"
+		lineageTag: 5f1efaef-7ed1-4dcb-952c-8be0c5cdb9cd
+
+	measure 'Undertekst kvalitetssikret' = FORMAT ( [Endring kvalitetssikret siste], "+0,0 pp;-0,0 pp;0,0 pp" ) & " mot i fjor"
+		lineageTag: 0de96e9f-8739-4433-8f24-75683bdd0430
+
 	column Column1
 		dataType: string
 		isHidden
