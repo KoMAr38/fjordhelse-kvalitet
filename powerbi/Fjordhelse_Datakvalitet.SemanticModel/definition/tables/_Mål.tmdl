@@ -144,6 +144,20 @@ table _Mål
 			Tegn & Tall & " pp mot i fjor"
 		lineageTag: 0de96e9f-8739-4433-8f24-75683bdd0430
 
+	measure 'Andel manglende sluttdato simulert' = [Andel manglende sluttdato] * ( 1 - [Forbedring i registrering Value] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 568c814e-4138-4e0b-92e1-754849f0e6e7
+
+	measure 'Andel fristbrudd rapportert simulert' =
+			
+			VAR Forbedring = [Forbedring i registrering Value]
+			VAR IkkeReelle = [Fristbrudd rapportert] - [Fristbrudd kvalitetssikret]
+			VAR NyeFristbrudd = [Fristbrudd rapportert] - ( IkkeReelle * Forbedring )
+			RETURN
+			DIVIDE ( NyeFristbrudd, [Antall henvisninger] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b1e80c20-3cc8-4341-9123-983a890517c1
+
 	column Column1
 		dataType: string
 		isHidden

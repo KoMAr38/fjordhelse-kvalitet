@@ -1,0 +1,27 @@
+table 'Forbedring i registrering'
+	lineageTag: 132f6044-2fd4-4a99-b602-d76cd22a4d9f
+
+	measure 'Forbedring i registrering Value' = SELECTEDVALUE('Forbedring i registrering'[Forbedring i registrering], 0)
+		formatString: 0%;-0%;0%
+		lineageTag: 3ac7810b-03f4-4b4a-b3dc-fbe26a814b7b
+
+	column 'Forbedring i registrering'
+		lineageTag: 0f6a1c7b-8caf-44b8-bcc9-ede5ee05bd96
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Forbedring i registrering' = calculated
+		mode: import
+		source = GENERATESERIES(0, 1, 0.05)
+
+	annotation PBI_Id = 83c50350da7741e1ad3403014fd5611e
+

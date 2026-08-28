@@ -20,6 +20,7 @@ ref table fact_datakvalitet
 ref table fact_henvisning
 ref table _Mål
 ref table dim_dato
+ref table 'Forbedring i registrering'
 
 ref cultureInfo en-US
 
