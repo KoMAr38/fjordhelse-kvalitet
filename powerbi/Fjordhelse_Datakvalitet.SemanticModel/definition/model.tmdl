@@ -19,6 +19,7 @@ ref table dim_diagnose
 ref table fact_datakvalitet
 ref table fact_henvisning
 ref table _Mål
+ref table dim_dato
 
 ref cultureInfo en-US
 

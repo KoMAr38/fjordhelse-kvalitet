@@ -1,0 +1,89 @@
+table dim_dato
+	lineageTag: 6e2e64f0-477a-4288-8d2c-0cd5264029ac
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Long Date
+		lineageTag: 6a34fa4a-0b5d-492b-a8fd-eb708d098449
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column aar
+		formatString: 0
+		lineageTag: 29a09b52-4d60-45c6-b9f8-ed0d9f58f31e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [aar]
+
+		annotation SummarizationSetBy = Automatic
+
+	column maned_nr
+		formatString: 0
+		lineageTag: 743dff35-9112-4f71-971a-b0f44098d9ef
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [maned_nr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column maned_start
+		formatString: Long Date
+		lineageTag: 4a931314-d799-41fd-946c-3e6e1a237d96
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [maned_start]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column maned_etikett
+		lineageTag: d8898ae4-dbd8-4ed0-bbff-da7404c41332
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [maned_etikett]
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortering
+		formatString: 0
+		lineageTag: 45bba871-d733-4593-bcff-4d45afa570b9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [sortering]
+
+		annotation SummarizationSetBy = Automatic
+
+	column kvartal
+		lineageTag: 33b5fded-ef57-452d-8919-0472679e5e78
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [kvartal]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_dato = calculated
+		mode: import
+		source =
+				
+				VAR FraDato = DATE ( YEAR ( MIN ( fact_henvisning[henvisning_mottatt] ) ), 1, 1 )
+				VAR TilDato = DATE ( YEAR ( MAX ( fact_henvisning[henvisning_mottatt] ) ), 12, 31 )
+				RETURN
+				ADDCOLUMNS (
+				    CALENDAR ( FraDato, TilDato ),
+				    "aar", YEAR ( [Date] ),
+				    "maned_nr", MONTH ( [Date] ),
+				    "maned_start", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ),
+				    "maned_etikett", FORMAT ( [Date], "yyyy-MM" ),
+				    "sortering", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+				    "kvartal", "K" & ROUNDUP ( MONTH ( [Date] ) / 3, 0 )
+				)
+
+	annotation PBI_Id = c029c05b9166401390868b74400a8580
+
