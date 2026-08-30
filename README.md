@@ -169,7 +169,9 @@ Mørkt tema definert i `powerbi/tema.json`. Blå er alltid rapportert, grønn er
 
 Første fil installerer avhengigheter, andre genererer data og kjører hele dbt-pipelinen. Forventet resultat: `Done. PASS=41 WARN=0 ERROR=0 SKIP=0`.
 
-Åpne deretter `powerbi/Fjordhelse_Datakvalitet.pbip`. Parameteren `MartMappe` i Power Query må peke til `data/mart/` med skråstrek på slutten.
+Åpne deretter `powerbi/Fjordhelse_Datakvalitet.pbip`. Rapporten er ferdig bygget og ligger i repoet som TMDL og JSON — sider, mål og visualer følger med. Den eneste tilpasningen som kan trengs er parameteren `MartMappe` i Power Query, som må peke til `data/mart/` med skråstrek på slutten.
+
+`powerbi/STEG_FOR_STEG.md` er ikke nødvendig for å bruke rapporten. Den er en logg over hvordan den ble bygget og hvorfor hvert valg ble tatt.
 
 Krever Python 3.10+ og Power BI Desktop med `.pbip`-format aktivert under Preview features.
 
