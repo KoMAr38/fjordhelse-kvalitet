@@ -1,12 +1,23 @@
-# Power BI — steg for steg
+# Byggelogg for rapporten
+
+**Dette er ikke nødvendig for å bruke prosjektet.** Rapporten ligger ferdig i
+`Fjordhelse_Datakvalitet.pbip` — fire sider, alle mål, relasjoner og visualer er
+versjonert som TMDL og JSON. Åpne fila, og alt er der.
+
+Dokumentet er en logg: hva som ble gjort, i hvilken rekkefølge, og hvorfor hvert
+valg som ikke var åpenbart ble tatt. Kontrollpunktene underveis er de faktiske
+tallene modellen skal gi, og kan brukes til å verifisere at et nytt bygg gir
+samme resultat.
 
 Menynavn står på engelsk, fordi Power BI Desktop er installert på engelsk.
 
-Regn med to timer. Modellen er mindre enn i prosjekt 1: fem tabeller, ni mål,
-tre rapportsider.
+Bygging fra bunnen tar rundt to timer. Forutsetning: `2_BYGG.bat` har kjørt
+ferdig med `PASS=41 ERROR=0`, og `data\mart\` inneholder én `.parquet` og fire
+`.csv`.
 
-Forutsetning: `2_BYGG.bat` har kjørt ferdig med `PASS=41 ERROR=0`, og
-`data\mart\` inneholder én `.parquet` og fire `.csv`.
+Merk at loggen beskriver tre rapportsider. Siden `Oversikt` — KPI-fliser,
+sparklines og what-if-simulering — kom til etterpå, og er dokumentert i README
+under «Rapporten» og i commit-historikken.
 
 ---
 
